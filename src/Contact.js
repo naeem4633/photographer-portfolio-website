@@ -7,20 +7,20 @@ const Contact = () => {
     <Header fixed={true} transparent={true}/>
     <section className='w-full'>
         <div className="h-[60vh] flex flex-col bg-gray-800 justify-center bg-[url('./static/images/contact-cover.jpg')]">
-            <div className='w-full flex flex-col text-center text-white justify-center'>
-                <p className='text-8xl font-bold'>Contact.</p>
-                <p className='text-lg'>Please let me know how I can help. I look forward to working with you.</p>
+            <div className='w-full flex flex-col text-center text-white justify-center space-y-2'>
+                <p className='text-5xl lg:text-8xl font-bold'>Contact.</p>
+                <p className='lg:text-lg'>Please let me know how I can help. I look forward to working with you.</p>
             </div>
         </div>
-        <div className='w-full flex flex-row p-4 mt-20'>
-            <div className='w-1/2'>
+        <div className='w-full flex flex-col lg:flex-row p-4 mt-20'>
+            <div className='hidden lg:w-1/2'>
                 <img src='../static/images/contact.jpg' className='w-3/4 h-[80vh] p-6'></img>
             </div>
-            <div className='w-1/2 flex flex-col space-y-3 text-gray-400 p-4'>
-                <p className='text-5xl text-gray-600 tracking-wide'>LET'S DO THIS</p>
-                <p className=''>Please contact me at 570 466 7732 for whatever you need, OR think you need.</p>
-                <p className=''>OR Email me: johndoe@comcast.net</p>
-                <ul className='flex flex-col space-y-4 text-gray-400 text-lg w-4/5'>
+            <div className='w-full lg:w-1/2 flex flex-col space-y-3 text-gray-400 p-4'>
+                <p className='text-2xl lg:text-5xl text-gray-600 tracking-wide'>LET'S DO THIS</p>
+                <p className='text-sm lg:text-base'>Please contact me at 570 466 7732 for whatever you need, OR think you need.</p>
+                <p className='text-sm lg:text-base'>OR Email me: johndoe@comcast.net</p>
+                <ul className='w-full lg:w-4/5 flex flex-col space-y-4 text-gray-400 text-sm lg:text-lg'>
                     <li>
                         <label className=''>Name</label>
                         <input className='w-full p-3 border border-gray-300 text-sm text-black'></input>

@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom'
 
 const Header = ({ fixed, transparent }) => {
     const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
+    const [isUlVisible, setIsUlVisible] = useState(false);
+
+    const toggleUlVisibility = () => {
+      setIsUlVisible(!isUlVisible);
+    };
 
     const handlePortfolioHover = () => {
       setIsPortfolioOpen(true);
@@ -14,15 +19,15 @@ const Header = ({ fixed, transparent }) => {
     
   return (
     <section className={fixed ? "fixed top-0 bg-transparent w-full h-[15vh] text-white" : "bg-gray-800 w-full h-[15vh] text-white"}>
-        <div className='h-full flex flex-row justify-between px-16 items-center'>
+        <div className='h-full flex flex-row justify-between px-4 lg:px-16 items-center'>
             <div className='bg-gray-900 p-2 text-white'>
-                <Link to={'/'} className='h-24 p-2 bg-gray-900 flex flex-col items-center justify-center text-2xl outline outline-2 outline-gray-100 cursor-pointer'>
+                <Link to={'/'} className='w-24 lg:w-fit h-12 lg:h-24 p-2 bg-gray-900 flex flex-col items-center justify-center lg:text-2xl outline outline-2 outline-gray-100 cursor-pointer'>
                     <p>JOHN DOE</p>
                     <p className='font-bold'>IMAGES</p>
                 </Link>
             </div>  
-            <div className=' flex items-center'>
-                <div className='flex flex-row justify-between space-x-20'>
+            <div className='flex items-center'>
+                <div className='hidden lg:flex flex-row justify-between space-x-20'>
                     <ul className='flex flex-row space-x-8 tracking-wider font-semibold'>
                         <Link to={'/'} className='cursor-pointer hover:underline'>HOME</Link>
                         <div className='flex flex-col items-center space-x-1 cursor-pointer hover:underline'>
@@ -38,7 +43,6 @@ const Header = ({ fixed, transparent }) => {
                             </ul>   
                             )}
                         </div>
-
                         <Link to={'/about'} className='cursor-pointer hover:underline'>ABOUT</Link>
                         <Link to={'/contact'} className='cursor-pointer hover:underline'>CONTACT</Link>
                     </ul>
@@ -53,6 +57,19 @@ const Header = ({ fixed, transparent }) => {
                             <img className='w-4 h-4 cursor-pointer' src='../static/images/instagram.png'></img>
                         </li>
                     </ul>
+                </div>
+                <div className='lg:hidden flex flex-col justify-center items-center text-xs'>
+                    <img onClick={toggleUlVisibility} src='../static/images/menu.png' className='w-8 h-8'></img>
+                    {isUlVisible && (
+                    <ul className='w-1/2 absolute right-3 top-20 bg-gray-900 flex flex-col tracking-wider font-semibold text-center mt-4 py-3'>
+                        <Link to={'/'} className='p-3'>HOME</Link>
+                        <Link to={'/architecture'} className='p-3'>ARCHITECTURE</Link>
+                        <Link to={'/commercial'} className='p-3'>COMMERCIAL</Link>
+                        <Link to={'/healthcare'} className='p-3'>HEALTHCARE</Link>
+                        <Link to={'/about'} className='p-3'>ABOUT</Link>
+                        <Link to={'/contact'} className='p-3'>CONTACT</Link>
+                    </ul>
+                    )}
                 </div>
             </div>
         </div>
