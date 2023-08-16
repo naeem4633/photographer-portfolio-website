@@ -7,6 +7,7 @@ import Footer from './Footer';
 import About from './About';
 import Contact from './Contact';
 import Category from './Category';
+import ErrorPage from './ErrorPage';
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1023);
@@ -42,6 +43,7 @@ function App() {
           <Route path='/architecture' element={<Category name={"Architecture"} images={sampleImageSrcs} cover={"../static/images/architecture.jpg"} isMobile={isMobile}/>}/>
           <Route path='/healthcare' element={<Category name={"Healthcare"} images={sampleImageSrcs} cover={"../static/images/healthcare.jpg"} isMobile={isMobile}/>}/>
           <Route path='/commercial' element={<Category name={"Commercial"} images={sampleImageSrcs} cover={"../static/images/commercial.jpg"} isMobile={isMobile}/>}/>
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
       <Footer />

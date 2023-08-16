@@ -1,11 +1,13 @@
 import React from 'react'
 import Header from './Header'
+import { ResetPage } from './ResetPage';
 
 const Contact = () => {
   return (
     <>
     <Header fixed={true} transparent={true}/>
     <section className='w-full'>
+        <ResetPage />
         <div className="h-[60vh] flex flex-col bg-gray-800 justify-center bg-[url('./static/images/contact-cover.jpg')]">
             <div className='w-full flex flex-col text-center text-white justify-center space-y-2'>
                 <p className='text-5xl lg:text-8xl font-bold'>Contact.</p>

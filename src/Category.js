@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './Header'
+import { ResetPage } from './ResetPage';
 
 const Category = ({name, cover, images, isMobile}) => {
 const mobileCover = isMobile ? cover.replace('.jpg', '-mobile.jpg') : cover;
@@ -7,6 +8,7 @@ const mobileCover = isMobile ? cover.replace('.jpg', '-mobile.jpg') : cover;
     <>
     <Header fixed={true} transparent={true}/>
     <section className='w-full'>
+        <ResetPage />
         <div className="w-full h-[100vh] flex flex-col bg-gray-800 justify-center" style={{ backgroundImage: `url(${mobileCover})` }}>
             <div className='w-full flex flex-col text-center text-white justify-center'>
                 <p className='text-5xl lg:text-8xl font-bold'>{name}</p>

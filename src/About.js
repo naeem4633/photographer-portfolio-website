@@ -1,12 +1,13 @@
 import React from 'react'
 import Header from './Header'
-import Footer from './Footer'
+import { ResetPage } from './ResetPage';
 
 const About = ({isMobile}) => {
   return (
     <>
     <Header fixed={false} transparent={false}/>
     <section className='w-full'>
+        <ResetPage />
         <div className='mx-auto w-full lg:w-1/2 flex flex-col space-y-4 p-4 my-20'>
             <p className='text-center font-bold clear-lefttext-gray-700 text-2xl text-gray-500'>John Doe</p>
             <p className='text-center text-xl lg:text-4xl text-gray-600'>I've been doing this for a while. </p>

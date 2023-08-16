@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
-import Footer from './Footer';
+import { ResetPage } from './ResetPage';
 
 const Home = ({isMobile}) => {
 
@@ -35,6 +35,7 @@ const Home = ({isMobile}) => {
     <>
     <Header fixed={true} transparent={true}/>
     <section className='w-full'>
+        <ResetPage />
         <div className='flex flex-col bg-gray-800'>
           <div className='w-full flex flex-col justify-center items-center'>
               <img className='w-full h-[100vh]' src={isMobile ? "../static/images/home-3-mobile.jpg" : "../static/images/home-3.jpg"}></img>
